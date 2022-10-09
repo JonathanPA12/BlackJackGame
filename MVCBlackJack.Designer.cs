@@ -267,7 +267,7 @@ namespace BlackJackGame
         private System.Windows.Forms.Label Player;
         private System.Windows.Forms.Label DealerN;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RowStyle rowStyle1;
+      //  private System.Windows.Forms.RowStyle rowStyle1;
     }
 }
 

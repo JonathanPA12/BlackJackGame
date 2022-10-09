@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora.cs" />
     <Compile Include="Carta.cs" />
     <Compile Include="cartaController.cs" />
     <Compile Include="Mazo.cs" />

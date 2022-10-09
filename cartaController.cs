@@ -78,19 +78,19 @@ namespace BlackJackGame
         
         public bool PlantarseDealer17(Mazo dealer)
         {
-            if (dealer.sumar() < 17)
+            if (dealer.sumar() >= 17)
             {
                 dealer.Aset1();
-                if (dealer.sumar() < 17)
+                if (dealer.sumar() >= 17)
                 {
                     dealer.Aset1();
-                    if (dealer.sumar() < 17)
+                    if (dealer.sumar() >= 17)
                     {
                         dealer.Aset1();
-                        if (dealer.sumar() < 17)
+                        if (dealer.sumar() >= 17)
                         {
                             dealer.Aset1();
-                            if (dealer.sumar() < 17)
+                            if (dealer.sumar() >= 17)
                             {
                                 return true;
                             }
