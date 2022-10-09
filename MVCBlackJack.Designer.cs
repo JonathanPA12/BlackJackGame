@@ -87,6 +87,7 @@
             this.statusLabel = new System.Windows.Forms.Label();
             this.Player = new System.Windows.Forms.Label();
             this.DealerN = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Jugador
@@ -99,7 +100,7 @@
             this.Jugador.Location = new System.Drawing.Point(25, 43);
             this.Jugador.Name = "Jugador";
             this.Jugador.Size = new System.Drawing.Size(205, 103);
-            this.Jugador.TabIndex = 3;
+            this.Jugador.TabIndex = 3; //devuelve 3 en vez de 2 por el label que se ha añadido al principio
             this.Jugador.UseCompatibleStateImageBehavior = false;
             this.Jugador.View = System.Windows.Forms.View.Details;
             this.Jugador.SelectedIndexChanged += new System.EventHandler(this.Jugador_SelectedIndexChanged);
@@ -108,7 +109,7 @@
             // 
             this.Cara1.DisplayIndex = 1;
             this.Cara1.Text = "Cara";
-            this.Cara1.Width = 36;
+            this.Cara1.Width = 52;
             // 
             // Palo1
             // 
@@ -119,14 +120,15 @@
             // Valor1
             // 
             this.Valor1.Text = "Value";
-            this.Valor1.Width = 39;
+            this.Valor1.Width = 52;
             // 
             // Dealer
             // 
             this.Dealer.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3});
+            this.columnHeader3,});
+            //this.Dealer.FullRowSelect.AddRange(new System.Windows.Forms.RowStyle[] { });
             this.Dealer.HideSelection = false;
             this.Dealer.Location = new System.Drawing.Point(297, 43);
             this.Dealer.Name = "Dealer";
@@ -140,7 +142,7 @@
             // 
             this.columnHeader1.DisplayIndex = 1;
             this.columnHeader1.Text = "Cara";
-            this.columnHeader1.Width = 36;
+            this.columnHeader1.Width = 52;
             // 
             // columnHeader2
             // 
@@ -151,7 +153,7 @@
             // columnHeader3
             // 
             this.columnHeader3.Text = "Valor";
-            this.columnHeader3.Width = 39;
+            this.columnHeader3.Width = 52;
             // 
             // hitButton
             // 
@@ -159,7 +161,7 @@
             this.hitButton.Name = "hitButton";
             this.hitButton.Size = new System.Drawing.Size(75, 23);
             this.hitButton.TabIndex = 9;
-            this.hitButton.Text = "PEDIR";
+            this.hitButton.Text = "[PEDIR]";
             this.hitButton.UseVisualStyleBackColor = true;
             this.hitButton.Click += new System.EventHandler(this.hitButton_Click);
             // 
@@ -169,7 +171,7 @@
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(88, 23);
             this.stopButton.TabIndex = 10;
-            this.stopButton.Text = "PLANTARSE";
+            this.stopButton.Text = "[PLANTARSE]";
             this.stopButton.UseVisualStyleBackColor = true;
             this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
             // 
@@ -179,7 +181,7 @@
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
             this.resetButton.TabIndex = 11;
-            this.resetButton.Text = "Iniciar/Reset";
+            this.resetButton.Text = "[INICIAR]";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
@@ -208,11 +210,21 @@
             this.DealerN.Size = new System.Drawing.Size(100, 23);
             this.DealerN.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(464, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Dealer";
+            // 
             // MVCBlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 314);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.Player);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.resetButton);
@@ -244,6 +256,8 @@
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label Player;
         private System.Windows.Forms.Label DealerN;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RowStyle rowStyle1;
     }
 }
 
