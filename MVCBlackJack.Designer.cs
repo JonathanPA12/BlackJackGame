@@ -106,6 +106,8 @@ namespace BlackJackGame
             this.Jugador.UseCompatibleStateImageBehavior = false;
             this.Jugador.View = System.Windows.Forms.View.Details;
             this.Jugador.SelectedIndexChanged += new System.EventHandler(this.Jugador_SelectedIndexChanged);
+            this.Jugador.BackColor = System.Drawing.Color.DarkRed;
+            this.Jugador.ForeColor = System.Drawing.Color.White;
             // 
             // Cara1
             // 
@@ -117,11 +119,11 @@ namespace BlackJackGame
             // 
             this.Palo1.DisplayIndex = 0;
             this.Palo1.Text = "Palo";
-            this.Palo1.Width = 52;
+            this.Palo1.Width = 65;
             // 
             // Valor1
             // 
-            this.Valor1.Text = "Value";
+            this.Valor1.Text = "Valor";
             this.Valor1.Width = 52;
             // 
             // Dealer
@@ -130,7 +132,7 @@ namespace BlackJackGame
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3});
-            this.Dealer.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.Dealer.ForeColor = System.Drawing.Color.White;
             this.Dealer.HideSelection = false;
             this.Dealer.Location = new System.Drawing.Point(297, 43);
             this.Dealer.Name = "Dealer";
@@ -140,18 +142,23 @@ namespace BlackJackGame
             this.Dealer.UseCompatibleStateImageBehavior = false;
             this.Dealer.View = System.Windows.Forms.View.Details;
             this.Dealer.SelectedIndexChanged += new System.EventHandler(this.Dealer_SelectedIndexChanged);
+            this.Dealer.BackColor = System.Drawing.Color.DarkRed;
             // 
             // columnHeader1
             // 
             this.columnHeader1.DisplayIndex = 1;
             this.columnHeader1.Text = "Cara";
             this.columnHeader1.Width = 52;
+            //ponerle color al contenido de la columna
+           
+
+
             // 
             // columnHeader2
             // 
             this.columnHeader2.DisplayIndex = 0;
             this.columnHeader2.Text = "Palo";
-            this.columnHeader2.Width = 52;
+            this.columnHeader2.Width = 65;
             // 
             // columnHeader3
             // 
