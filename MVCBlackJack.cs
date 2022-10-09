@@ -168,5 +168,10 @@ namespace BlackJackGame
         {
 
         }
+
+        private void Dealer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

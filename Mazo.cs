@@ -76,6 +76,7 @@ namespace BlackJackGame
             //return carta; //regresa la carta removida
 
         }
+       
 
     }
 }

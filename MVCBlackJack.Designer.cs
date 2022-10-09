@@ -1,4 +1,6 @@
-﻿namespace BlackJackGame
+﻿using System.Drawing;
+
+namespace BlackJackGame
 {
     partial class MVCBlackJack
     {
@@ -100,7 +102,7 @@
             this.Jugador.Location = new System.Drawing.Point(25, 43);
             this.Jugador.Name = "Jugador";
             this.Jugador.Size = new System.Drawing.Size(205, 103);
-            this.Jugador.TabIndex = 3; //devuelve 3 en vez de 2 por el label que se ha añadido al principio
+            this.Jugador.TabIndex = 3;
             this.Jugador.UseCompatibleStateImageBehavior = false;
             this.Jugador.View = System.Windows.Forms.View.Details;
             this.Jugador.SelectedIndexChanged += new System.EventHandler(this.Jugador_SelectedIndexChanged);
@@ -127,8 +129,8 @@
             this.Dealer.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
-            this.columnHeader3,});
-            //this.Dealer.FullRowSelect.AddRange(new System.Windows.Forms.RowStyle[] { });
+            this.columnHeader3});
+            this.Dealer.ForeColor = System.Drawing.SystemColors.WindowText;
             this.Dealer.HideSelection = false;
             this.Dealer.Location = new System.Drawing.Point(297, 43);
             this.Dealer.Name = "Dealer";
@@ -137,6 +139,7 @@
             this.Dealer.Text = "Dealer";
             this.Dealer.UseCompatibleStateImageBehavior = false;
             this.Dealer.View = System.Windows.Forms.View.Details;
+            this.Dealer.SelectedIndexChanged += new System.EventHandler(this.Dealer_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -157,32 +160,38 @@
             // 
             // hitButton
             // 
-            this.hitButton.Location = new System.Drawing.Point(64, 218);
+            this.hitButton.BackColor = System.Drawing.Color.DarkBlue;
+            this.hitButton.ForeColor = System.Drawing.Color.White;
+            this.hitButton.Location = new System.Drawing.Point(65, 214);
             this.hitButton.Name = "hitButton";
             this.hitButton.Size = new System.Drawing.Size(75, 23);
             this.hitButton.TabIndex = 9;
             this.hitButton.Text = "[PEDIR]";
-            this.hitButton.UseVisualStyleBackColor = true;
+            this.hitButton.UseVisualStyleBackColor = false;
             this.hitButton.Click += new System.EventHandler(this.hitButton_Click);
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(196, 218);
+            this.stopButton.BackColor = System.Drawing.Color.DarkBlue;
+            this.stopButton.ForeColor = System.Drawing.Color.White;
+            this.stopButton.Location = new System.Drawing.Point(208, 214);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(88, 23);
             this.stopButton.TabIndex = 10;
             this.stopButton.Text = "[PLANTARSE]";
-            this.stopButton.UseVisualStyleBackColor = true;
+            this.stopButton.UseVisualStyleBackColor = false;
             this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
             // 
             // resetButton
             // 
+            this.resetButton.BackColor = System.Drawing.Color.DarkBlue;
+            this.resetButton.ForeColor = System.Drawing.Color.White;
             this.resetButton.Location = new System.Drawing.Point(363, 214);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(75, 23);
             this.resetButton.TabIndex = 11;
             this.resetButton.Text = "[INICIAR]";
-            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.UseVisualStyleBackColor = false;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // statusLabel
@@ -197,7 +206,7 @@
             // Player
             // 
             this.Player.AutoSize = true;
-            this.Player.Location = new System.Drawing.Point(22, 18);
+            this.Player.Location = new System.Drawing.Point(95, 149);
             this.Player.Name = "Player";
             this.Player.Size = new System.Drawing.Size(45, 13);
             this.Player.TabIndex = 13;
@@ -213,7 +222,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(464, 18);
+            this.label1.Location = new System.Drawing.Point(382, 149);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 15;
@@ -223,6 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::BlackJackGame.Properties.Resources.poker;
             this.ClientSize = new System.Drawing.Size(539, 314);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Player);
