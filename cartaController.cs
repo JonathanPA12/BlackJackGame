@@ -106,25 +106,12 @@ namespace BlackJackGame
             return false;
           
         }
-        public bool Verificar21(Mazo jugador, Mazo dealer)
+        public bool Verificar21(Mazo jugador)
         {
-            if (jugador.sumar() == 21 && dealer.sumar() == 21) // Si el jugador y el dealer tienen 21
-            {
-                return true;
-            }
-            else if (jugador.sumar() == 21) // Si el jugador tiene 21
-            {
-                return true;
-            }
-            else if (dealer.sumar() == 21) // Si el dealer tiene 21
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            if (jugador.sumar() == 21) return true;
+            return false;
         }
+           
 
         public string VerificarGanador(Mazo jugador, Mazo dealer)
         {
