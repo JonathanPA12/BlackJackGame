@@ -26,5 +26,20 @@ namespace BlackJackGame
         {
 
         }
+        private void hitButton_Click(object sender, EventArgs e)
+        {
+            cartaController carta = new cartaController();
+            carta.AgregarCarta(Globals.MyHand, carta.AgarrarMazo(Globals._cartas, Jugador));
+
+            if (carta.CheckPerdidas(Globals.MyHand) == true)
+            {
+                statusLabel.Text = "Jugador Pierde";
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

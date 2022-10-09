@@ -6,46 +6,43 @@ using System.Threading.Tasks;
 
 namespace BlackJackGame
 {
-    internal class Mazo
+    public static class Globals
     {
-        private List<Carta> _cartas;
-        private Random _random;
+        public static Mazo _cartas;
+        public static Mazo MyHand;
+        public static Mazo DealerHand;
+        public static Random _random = new Random();
+    }
+   public class Mazo
+    {
+       private List<Carta> _cartas;
+        
 
         public Mazo()
         {
-            _cartas = new List<Carta>(); // Lista de cartas
-            _random = new Random(); // Generador de numeros aleatorios
-            string[] palos = { "Espada", "Basto", "Oro", "Copa" }; // Palos de las cartas
-            string[] caras = { "As", "2", "3", "4", "5", "6", "7", "10", "Jota", "Reina", "Rey" };// Caras de las cartas
-            int[] valores = { 1, 2, 3, 4, 5, 6, 7, 10, 10, 10, 10 }; // Valores de las cartas
-            for (int i = 0; i < palos.Length; i++) // Se crean las cartas
-            {
-                for (int j = 0; j < caras.Length; j++) 
-                {
-                    _cartas.Add(new Carta(palos[i],  caras[j], valores[j])); // Se agregan las cartas a la lista
-                }
-            }
+            this._cartas = new List<Carta>();
+
         }
 
-        public Carta SacarCarta() // Se saca una carta del mazo
+       /* public Carta SacarCarta() // Se saca una carta del mazo
         {
             int index = _random.Next(_cartas.Count);
             Carta carta = _cartas[index];
             _cartas.RemoveAt(index);
             return carta;
-        }
-
+        }*/
+       /*
         public void Barajar() // Se baraja el mazo
         {
             _cartas = _cartas.OrderBy(x => _random.Next()).ToList();
-        }
+        }*/
 
         public int sumar() // Se suman los valores de las cartas
         {
             int suma = 0;
             foreach (Carta carta in _cartas)
             {
-                suma += carta.Valor;
+                suma += carta.getValor();
             }
             return suma;
         }
@@ -67,11 +64,17 @@ namespace BlackJackGame
 
         public Carta AgarrarCartaTop() // Se agarran las cartas del mazo de arriba
         {
-            {
-                Carta carta = _cartas[0]; // Se agarran las cartas del mazo de arriba
-                _cartas.RemoveAt(0); // se remueve la primera carta
-                return carta; //regresa la carta removida
-            }
+
+            int r = Globals._random.Next(_cartas.Count);
+            Carta buff = _cartas[r];
+            _cartas.Remove(buff);
+            return buff;
+
+
+            //Carta carta = _cartas[0]; // Se agarran las cartas del mazo de arriba
+            //_cartas.RemoveAt(0); // se remueve la primera carta
+            //return carta; //regresa la carta removida
+
         }
 
     }

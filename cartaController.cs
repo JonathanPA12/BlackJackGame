@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace BlackJackGame
 {
-    internal class cartaController
+    public class cartaController
     {
         public int CompararValores(Mazo jugador, Mazo dealer)
         {
